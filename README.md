@@ -1,1 +1,1 @@
-# uniregistry-challenge
+# x-registry
