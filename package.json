@@ -1,24 +1,27 @@
 {
-  "name": "x-registry",
+  "name": "uniregsitry-challenge",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot",
     "build": "webpack",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chrfreitas/x-registry.git"
+    "url": "git+https://github.com/chrfreitas/uniregsitry-challenge.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chrfreitas/x-registry/issues"
+    "url": "https://github.com/chrfreitas/uniregsitry-challenge/issues"
   },
-  "homepage": "https://github.com/chrfreitas/x-registry#readme",
+  "homepage": "https://github.com/chrfreitas/uniregsitry-challenge#readme",
   "dependencies": {
+    "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "redux": "^3.7.2"
