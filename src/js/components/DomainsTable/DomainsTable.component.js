@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class DomainsTable extends Component {
-
     static propTypes = {
         domains: PropTypes.array
     }
