@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Table from '../../components/Table/Table.component';
+import DomainsTable from '../../components/DomainsTable/DomainsTable.component';
 import PropTypes from 'prop-types';
 
 class Home extends Component {
@@ -9,7 +9,7 @@ class Home extends Component {
 
     render() {
         return (
-            <Table items={this.props.items}/>
+            <DomainsTable items={this.props.items}/>
         )
     }
 }

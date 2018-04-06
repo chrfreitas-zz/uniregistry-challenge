@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Module It should match with the snapshot 1`] = `
+exports[`DomainsTable component It should match with the snapshot 1`] = `
 <table>
   <thead>
     <th>

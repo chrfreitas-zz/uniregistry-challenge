@@ -10,11 +10,6 @@ beforeAll(() => {
 });
 
 describe('Home Module', () => {
-    it('It should be exists', () => {
-        const wrapper = shallow(<Home />);
-        expect(wrapper.exists()).toBeTruthy();
-    });
-
     it('It should match with the snapshot', () => {
         const wrapper = renderer.create(<Home />).toJSON();
         expect(wrapper).toMatchSnapshot();

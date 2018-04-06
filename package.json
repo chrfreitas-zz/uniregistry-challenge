@@ -6,8 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot",
     "build": "webpack",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "jest -u",
+    "test:watch": "jest --watch -u",
     "test:coverage": "jest --coverage"
   },
   "repository": {
