@@ -7,7 +7,17 @@ class DomainsTable extends Component {
         domains: PropTypes.array
     }
 
-    renderContent(domains = []) {
+    renderHeader() {
+        return (
+            <th>
+                <td>Domains name</td>
+                <td>Uniregistry</td>
+                <td>Price</td>
+            </th>
+        )
+    }
+
+    renderBody(domains = []) {
         return domains.map((item, index) => {
             return (
                 <tr key={index}>
@@ -23,24 +33,10 @@ class DomainsTable extends Component {
         return (
             <table>
                 <thead>
-                    <th>
-                        <td>
-                            Domains name
-                        </td>
-                    </th>
-                    <th>
-                        <td>
-                            Uniregistry
-                        </td>
-                    </th>
-                    <th>
-                        <td>
-                            Price
-                        </td>
-                    </th>
+                    { this.renderHeader() }
                 </thead>
                 <tbody>
-                    { this.renderContent(this.props.domains) }
+                    { this.renderBody(this.props.domains) }
                 </tbody>
             </table>
         )

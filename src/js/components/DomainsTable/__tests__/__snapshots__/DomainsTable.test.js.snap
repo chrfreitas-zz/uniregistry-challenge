@@ -7,13 +7,9 @@ exports[`DomainsTable component It should match with the snapshot 1`] = `
       <td>
         Domains name
       </td>
-    </th>
-    <th>
       <td>
         Uniregistry
       </td>
-    </th>
-    <th>
       <td>
         Price
       </td>
