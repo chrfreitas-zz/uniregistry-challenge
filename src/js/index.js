@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Style from '../css/main.css';
-import Table from './components/Table/Table.component';
+import Home from './modules/Home/Home.module';
 
-ReactDOM.render(<Table />, document.getElementById('root'));
+ReactDOM.render(<Home />, document.getElementById('root'));
