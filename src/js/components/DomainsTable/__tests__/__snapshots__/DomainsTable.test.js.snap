@@ -3,17 +3,17 @@
 exports[`DomainsTable component It should match with the snapshot 1`] = `
 <table>
   <thead>
-    <th>
-      <td>
+    <tr>
+      <th>
         Domains name
-      </td>
-      <td>
+      </th>
+      <th>
         Uniregistry
-      </td>
-      <td>
+      </th>
+      <th>
         Price
-      </td>
-    </th>
+      </th>
+    </tr>
   </thead>
   <tbody />
 </table>

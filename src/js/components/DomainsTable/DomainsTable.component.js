@@ -9,11 +9,11 @@ class DomainsTable extends Component {
 
     renderHeader() {
         return (
-            <th>
-                <td>Domains name</td>
-                <td>Uniregistry</td>
-                <td>Price</td>
-            </th>
+            <tr>
+                <th>Domains name</th>
+                <th>Uniregistry</th>
+                <th>Price</th>
+            </tr>
         )
     }
 
@@ -21,9 +21,9 @@ class DomainsTable extends Component {
         return domains.map((item, index) => {
             return (
                 <tr key={index}>
-                    <td>item.name</td>
-                    <td>item.uniregistry</td>
-                    <td>item.price</td>
+                    <td>{ item.name }</td>
+                    <td>{ item.uniregistry }</td>
+                    <td>{ item.price }</td>
                 </tr>
             );
         });

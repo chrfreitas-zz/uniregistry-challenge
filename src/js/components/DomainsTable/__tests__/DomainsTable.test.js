@@ -26,7 +26,7 @@ describe('DomainsTable component', () => {
 
         const wrapper = shallow(<DomainsTable domains={domains} />);
         const amountDomains = domains.length;
-        const amountDomainsRendered = wrapper.find('tr').length;
+        const amountDomainsRendered = wrapper.find('tbody tr').length;
 
         expect(amountDomains).toEqual(amountDomainsRendered);
     });

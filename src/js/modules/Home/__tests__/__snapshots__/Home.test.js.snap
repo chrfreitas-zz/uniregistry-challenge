@@ -3,18 +3,52 @@
 exports[`Home Module It should match with the snapshot 1`] = `
 <table>
   <thead>
-    <th>
-      <td>
+    <tr>
+      <th>
         Domains name
-      </td>
-      <td>
+      </th>
+      <th>
         Uniregistry
+      </th>
+      <th>
+        Price
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        foolfighter.lol
       </td>
       <td>
-        Price
+        yes
       </td>
-    </th>
-  </thead>
-  <tbody />
+      <td>
+        $12.00
+      </td>
+    </tr>
+    <tr>
+      <td>
+        selfdriving.cars
+      </td>
+      <td>
+        yes
+      </td>
+      <td>
+        $16.00
+      </td>
+    </tr>
+    <tr>
+      <td>
+        greendiamondsky.com
+      </td>
+      <td>
+        no
+      </td>
+      <td>
+        $9.00
+      </td>
+    </tr>
+  </tbody>
 </table>
 `;

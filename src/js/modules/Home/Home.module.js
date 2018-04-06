@@ -1,15 +1,30 @@
 import React, { Component } from 'react';
 import DomainsTable from '../../components/DomainsTable/DomainsTable.component';
-import PropTypes from 'prop-types';
 
 class Home extends Component {
-    static propTypes = {
-        items: PropTypes.array
+    state = {
+        domains: [
+            {
+                name: 'foolfighter.lol',
+                uniregistry: 'yes',
+                price: '$12.00'
+            },
+            {
+                name: 'selfdriving.cars',
+                uniregistry: 'yes',
+                price: '$16.00'
+            },
+            {
+                name: 'greendiamondsky.com',
+                uniregistry: 'no',
+                price: '$9.00'
+            },
+        ]
     }
 
     render() {
         return (
-            <DomainsTable items={this.props.items}/>
+            <DomainsTable domains={this.state.domains}/>
         )
     }
 }
