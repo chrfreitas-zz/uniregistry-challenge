@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import DomainsTable from '../../components/DomainsTable/DomainsTable.component';
+import Modal from '../../components/Modal/Modal.component';
 
 class Home extends Component {
     state = {
@@ -24,7 +26,10 @@ class Home extends Component {
 
     render() {
         return (
-            <DomainsTable domains={this.state.domains}/>
+            <div>
+                <DomainsTable domains={this.state.domains}/>
+                <Modal />
+            </div>
         )
     }
 }
