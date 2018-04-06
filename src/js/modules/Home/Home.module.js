@@ -21,14 +21,23 @@ class Home extends Component {
                 uniregistry: 'no',
                 price: '$9.00'
             },
-        ]
+        ],
+        modal: {
+            opened: false
+        }
+    }
+
+    toggleModal = () => {
+        this.setState({
+            modal: { opened: !this.state.modal.opened }
+        })
     }
 
     render() {
         return (
             <div>
-                <DomainsTable domains={this.state.domains}/>
-                <Modal />
+                <DomainsTable domains={this.state.domains} toggleModal={this.toggleModal}/>
+                <Modal show={this.state.modal.opened}/>
             </div>
         )
     }

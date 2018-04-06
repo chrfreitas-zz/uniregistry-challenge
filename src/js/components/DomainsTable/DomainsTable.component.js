@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 
 class DomainsTable extends Component {
     static propTypes = {
-        domains: PropTypes.array
+        domains: PropTypes.array,
+        toggleModal: PropTypes.func
+    }
+
+    handleClickRow = () => {
+        this.props.toggleModal();
     }
 
     renderHeader() {
@@ -20,7 +25,7 @@ class DomainsTable extends Component {
         return domains.map((item, index) => {
             return (
                 <tr key={index}>
-                    <td>{ item.name }</td>
+                    <td onClick={ this.handleClickRow }>{ item.name }</td>
                     <td>{ item.uniregistry }</td>
                     <td>{ item.price }</td>
                 </tr>

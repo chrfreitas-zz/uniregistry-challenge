@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Modal component It should match with the snapshot 1`] = `
+exports[`Modal component should match with the snapshot 1`] = `
 <div
-  className="modal"
+  className="modal hide"
 >
   <form
     action=""

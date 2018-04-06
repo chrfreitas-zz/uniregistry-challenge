@@ -7,9 +7,19 @@ class Modal extends Component {
         domain: PropTypes.object
     }
 
+    getClass() {
+        let className = 'modal';
+
+        if(!this.props.show){
+            className += ' hide';
+        }
+
+        return className;
+    }
+
     render() {
         return (
-            <div className="modal">
+            <div className={ this.getClass() }>
                 <form action="">
                     <div>
                         <label>Domain name</label>

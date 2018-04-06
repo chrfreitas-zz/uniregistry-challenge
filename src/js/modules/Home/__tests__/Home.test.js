@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, { shallow }from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 
@@ -10,8 +10,14 @@ beforeAll(() => {
 });
 
 describe('Home Module', () => {
-    it('It should match with the snapshot', () => {
+    it('should match with the snapshot', () => {
         const wrapper = renderer.create(<Home />).toJSON();
         expect(wrapper).toMatchSnapshot();
     });
+
+    it('should change modal.opened to true', () => {
+        const wrapper = shallow(<Home />);
+        wrapper.instance().toggleModal();
+        expect(wrapper.state().modal.opened).toBeTruthy();
+    })
 });

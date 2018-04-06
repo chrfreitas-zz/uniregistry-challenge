@@ -10,8 +10,13 @@ beforeAll(() => {
 });
 
 describe('Modal component', () => {
-    it('It should match with the snapshot', () => {
+    it('should match with the snapshot', () => {
         const wrapper = renderer.create(<Modal />).toJSON();
         expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should return just base class modal', () => {
+        const wrapper = shallow(<Modal />);
+        expect(wrapper.instance().getClass()).toContain('modal')
     });
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home Module It should match with the snapshot 1`] = `
+exports[`Home Module should match with the snapshot 1`] = `
 <div>
   <table>
     <thead>
@@ -18,7 +18,9 @@ exports[`Home Module It should match with the snapshot 1`] = `
     </thead>
     <tbody>
       <tr>
-        <td>
+        <td
+          onClick={[Function]}
+        >
           foolfighter.lol
         </td>
         <td>
@@ -29,7 +31,9 @@ exports[`Home Module It should match with the snapshot 1`] = `
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          onClick={[Function]}
+        >
           selfdriving.cars
         </td>
         <td>
@@ -40,7 +44,9 @@ exports[`Home Module It should match with the snapshot 1`] = `
         </td>
       </tr>
       <tr>
-        <td>
+        <td
+          onClick={[Function]}
+        >
           greendiamondsky.com
         </td>
         <td>
@@ -53,7 +59,7 @@ exports[`Home Module It should match with the snapshot 1`] = `
     </tbody>
   </table>
   <div
-    className="modal"
+    className="modal hide"
   >
     <form
       action=""
