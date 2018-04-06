@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Module It should match with snapshot 1`] = `
+<h1>
+  Hello World
+</h1>
+`;
+
+exports[`Home Module It should match with the snapshot 1`] = `
+<h1>
+  Hello World
+</h1>
+`;
