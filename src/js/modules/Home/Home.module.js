@@ -49,8 +49,8 @@ class Home extends Component {
     }
 
     setSelectedDomain(domain) {
-        this.setState(prevState => {
-            selectedDomain: prevState.domains.find(item => item.id === domain.id)
+        this.setState({
+            selectedDomain: this.state.domains.find(item => item.id === domain.id)
         });
     }
 
@@ -60,12 +60,16 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
-                <DomainsTable domains={this.state.domains} goEdit={this.goEdit}/>
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <DomainsTable domains={this.state.domains} goEdit={this.goEdit}/>
 
-                <div className="row justify-content-center">
-                    <div className="col-6">
-                        { this.state.editMode && <DomainForm domain={this.state.selectedDomain} update={this.update} setEditMode={this.setEditMode} /> }
+                        <div className="row justify-content-center">
+                            <div className="col-6">
+                                { this.state.editMode && <DomainForm domain={this.state.selectedDomain} update={this.update} setEditMode={this.setEditMode} /> }
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
