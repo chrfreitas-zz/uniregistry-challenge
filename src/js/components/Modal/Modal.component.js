@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class Modal extends Component {
     static propTypes = {
-        domain: PropTypes.object
+        domain: PropTypes.object,
+        update: PropTypes.func
     }
 
     state = {
@@ -11,19 +12,25 @@ class Modal extends Component {
     }
 
     handleChange = (event) => {
-
         const newState = {
-            ...this.state.domain,
-            [event.target.name]: event.target.value
+            domain: {
+                ...this.state.domain,
+                [event.target.name]: event.target.value
+            }
         }
 
-        this.setState({ domain: newState });
+        this.setState(newState);
+    }
+
+    update = (e) => {
+        e.preventDefault();
+        this.props.update(this.state.domain);
     }
 
     render() {
         return (
             <div className="modal">
-                <form action="">
+                <form>
                     <div>
                         <label>Domain name</label>
                         <input type="text" name="name" value={this.state.domain.name} onChange={this.handleChange} />
@@ -37,7 +44,7 @@ class Modal extends Component {
                         <input type="text" name="price" value={this.state.domain.price} onChange={this.handleChange} />
                     </div>
                     <div>
-                        <button>Update it!</button>
+                        <button onClick={this.update}>Update it!</button>
                         <a href="">Cancel</a>
                     </div>
                 </form>
