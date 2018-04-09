@@ -7,8 +7,8 @@ class DomainsTable extends Component {
         toggleModal: PropTypes.func
     }
 
-    handleClickRow = () => {
-        this.props.toggleModal();
+    handleClickRow = (index) => {
+        this.props.toggleModal(index);
     }
 
     renderHeader() {
@@ -25,7 +25,7 @@ class DomainsTable extends Component {
         return domains.map((item, index) => {
             return (
                 <tr key={index}>
-                    <td onClick={ this.handleClickRow }>{ item.name }</td>
+                    <td onClick={ this.handleClickRow.bind(this, index) }>{ item.name }</td>
                     <td>{ item.uniregistry }</td>
                     <td>{ item.price }</td>
                 </tr>

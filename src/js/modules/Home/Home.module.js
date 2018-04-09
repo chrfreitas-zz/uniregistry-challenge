@@ -23,21 +23,27 @@ class Home extends Component {
             },
         ],
         modal: {
-            opened: false
+            opened: false,
+            domain: {}
         }
     }
 
-    toggleModal = () => {
-        this.setState({
-            modal: { opened: !this.state.modal.opened }
-        })
+    toggleModal = (index) => {
+        this.setState(prevState => {
+            return {
+                modal: {
+                    opened: !prevState.modal.opened,
+                    domain: prevState.domains.find((item, i) => i === index)
+                }
+            }
+        });
     }
 
     render() {
         return (
             <div>
                 <DomainsTable domains={this.state.domains} toggleModal={this.toggleModal}/>
-                <Modal show={this.state.modal.opened}/>
+                { this.state.modal.opened && <Modal domain={this.state.modal.domain}/> }
             </div>
         )
     }
