@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 class Modal extends Component {
     static propTypes = {
-        show: PropTypes.bool,
         domain: PropTypes.object
     }
 
@@ -11,11 +10,14 @@ class Modal extends Component {
         domain: this.props.domain
     }
 
-    handleChange(event) {
-        this.setState({
+    handleChange = (event) => {
+
+        const newState = {
             ...this.state.domain,
             [event.target.name]: event.target.value
-        });
+        }
+
+        this.setState({ domain: newState });
     }
 
     render() {
