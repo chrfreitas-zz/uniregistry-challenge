@@ -35,7 +35,7 @@ class DomainsTable extends Component {
 
     render() {
         return (
-            <table>
+            <table className="table table-hover">
                 <thead>
                     { this.renderHeader() }
                 </thead>

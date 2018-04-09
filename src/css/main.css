@@ -1,7 +1,6 @@
-html {
-    display: flex;
-}
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-.hide {
-    display: none;
+html,
+body {
+    height: 100%;
 }
