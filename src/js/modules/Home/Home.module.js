@@ -26,9 +26,7 @@ class Home extends Component {
             },
         ],
         editMode: false,
-        modal: {
-            domain: {}
-        }
+        selectedDomain: {}
     }
 
     update = (domain) => {
@@ -47,13 +45,12 @@ class Home extends Component {
 
     goEdit = (domain) => {
         this.setEditMode(true);
+        this.setSelectedDomain(domain);
+    }
 
+    setSelectedDomain(domain) {
         this.setState(prevState => {
-            return {
-                modal: {
-                    domain: prevState.domains.find(item => item.id === domain.id)
-                }
-            }
+            selectedDomain: prevState.domains.find(item => item.id === domain.id)
         });
     }
 
@@ -65,7 +62,7 @@ class Home extends Component {
         return (
             <div>
                 <DomainsTable domains={this.state.domains} goEdit={this.goEdit}/>
-                { this.state.editMode && <DomainForm domain={this.state.modal.domain}
+                { this.state.editMode && <DomainForm domain={this.state.selectedDomain}
                                                     update={this.update}
                                                     setEditMode={this.setEditMode} /> }
             </div>
