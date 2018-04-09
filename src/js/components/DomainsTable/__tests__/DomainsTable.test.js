@@ -26,6 +26,7 @@ describe('DomainsTable component', () => {
         ];
 
         const wrapper = shallow(<DomainsTable domains={domains} />);
+
         const amountDomains = domains.length;
         const amountDomainsRendered = wrapper.find('tbody tr').length;
 

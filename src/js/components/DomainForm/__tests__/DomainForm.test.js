@@ -3,13 +3,13 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 
-import Modal from '../Modal.component';
+import DomainForm from '../DomainForm.component';
 
 beforeAll(() => {
     Enzyme.configure({ adapter: new Adapter() });
 });
 
-describe('Modal component', () => {
+describe('DomainForm component', () => {
     it('should match with the snapshot', () => {
         const domain = {
             id: 2,
@@ -18,7 +18,7 @@ describe('Modal component', () => {
             price: '$3.00'
         }
 
-        const wrapper = renderer.create(<Modal domain={domain}/>).toJSON();
+        const wrapper = renderer.create(<DomainForm domain={domain}/>).toJSON();
         expect(wrapper).toMatchSnapshot();
     });
 });

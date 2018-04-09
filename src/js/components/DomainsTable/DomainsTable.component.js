@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 class DomainsTable extends Component {
     static propTypes = {
         domains: PropTypes.array,
-        toggleModal: PropTypes.func
+        goEdit: PropTypes.func
     }
 
-    handleClickRow = (item) => {
-        this.props.toggleModal(item);
+    handleClickRow = (domain) => {
+        this.props.goEdit(domain);
     }
 
     renderHeader() {
@@ -22,12 +22,12 @@ class DomainsTable extends Component {
     }
 
     renderBody(domains = []) {
-        return domains.map((item) => {
+        return domains.map((domain) => {
             return (
-                <tr key={item.id}>
-                    <td onClick={ this.handleClickRow.bind(this, item) }>{ item.name }</td>
-                    <td>{ item.uniregistry }</td>
-                    <td>{ item.price }</td>
+                <tr key={domain.id}>
+                    <td onClick={ this.handleClickRow.bind(this, domain) }>{ domain.name }</td>
+                    <td>{ domain.uniregistry }</td>
+                    <td>{ domain.price }</td>
                 </tr>
             );
         });

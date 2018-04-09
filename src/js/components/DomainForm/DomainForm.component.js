@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class Modal extends Component {
+class DomainForm extends Component {
     static propTypes = {
         domain: PropTypes.object,
         update: PropTypes.func
@@ -29,7 +29,7 @@ class Modal extends Component {
 
     render() {
         return (
-            <div className="modal">
+            <div>
                 <form>
                     <div>
                         <label>Domain name</label>
@@ -53,4 +53,4 @@ class Modal extends Component {
     }
 }
 
-export default Modal;
+export default DomainForm;

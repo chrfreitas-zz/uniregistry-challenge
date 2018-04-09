@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import DomainsTable from '../../components/DomainsTable/DomainsTable.component';
-import Modal from '../../components/Modal/Modal.component';
+import DomainForm from '../../components/DomainForm/DomainForm.component';
 
 class Home extends Component {
     state = {
@@ -45,7 +45,7 @@ class Home extends Component {
         this.setState(newState);
     }
 
-    toggleModal = (domain) => {
+    goEdit = (domain) => {
         this.setState(prevState => {
             return {
                 modal: {
@@ -59,8 +59,8 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <DomainsTable domains={this.state.domains} toggleModal={this.toggleModal}/>
-                { this.state.modal.opened && <Modal domain={this.state.modal.domain} update={this.update}/> }
+                <DomainsTable domains={this.state.domains} goEdit={this.goEdit}/>
+                { this.state.modal.opened && <DomainForm domain={this.state.modal.domain} update={this.update}/> }
             </div>
         )
     }

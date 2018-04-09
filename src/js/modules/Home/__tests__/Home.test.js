@@ -24,7 +24,7 @@ describe('Home Module', () => {
         }
 
         const wrapper = shallow(<Home />);
-        wrapper.instance().toggleModal(domain);
+        wrapper.instance().goEdit(domain);
         expect(wrapper.state().modal.opened).toBeTruthy();
     })
 
