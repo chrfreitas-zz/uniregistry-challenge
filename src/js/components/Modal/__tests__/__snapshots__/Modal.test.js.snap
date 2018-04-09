@@ -2,17 +2,18 @@
 
 exports[`Modal component should match with the snapshot 1`] = `
 <div
-  className="modal hide"
+  className="modal"
 >
-  <form
-    action=""
-  >
+  <form>
     <div>
       <label>
         Domain name
       </label>
       <input
+        name="name"
+        onChange={[Function]}
         type="text"
+        value="lalala"
       />
     </div>
     <div>
@@ -20,7 +21,10 @@ exports[`Modal component should match with the snapshot 1`] = `
         Registran email
       </label>
       <input
+        name="email"
+        onChange={[Function]}
         type="text"
+        value="lalala@gmail.com"
       />
     </div>
     <div>
@@ -28,11 +32,16 @@ exports[`Modal component should match with the snapshot 1`] = `
         Price
       </label>
       <input
+        name="price"
+        onChange={[Function]}
         type="text"
+        value="$3.00"
       />
     </div>
     <div>
-      <button>
+      <button
+        onClick={[Function]}
+      >
         Update it!
       </button>
       <a

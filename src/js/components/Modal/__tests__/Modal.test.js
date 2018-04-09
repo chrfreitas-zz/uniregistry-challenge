@@ -11,12 +11,14 @@ beforeAll(() => {
 
 describe('Modal component', () => {
     it('should match with the snapshot', () => {
-        const wrapper = renderer.create(<Modal />).toJSON();
-        expect(wrapper).toMatchSnapshot();
-    });
+        const domain = {
+            id: 2,
+            name: 'lalala',
+            email: 'lalala@gmail.com',
+            price: '$3.00'
+        }
 
-    it('should return just base class modal', () => {
-        const wrapper = shallow(<Modal />);
-        expect(wrapper.instance().getClass()).toContain('modal')
+        const wrapper = renderer.create(<Modal domain={domain}/>).toJSON();
+        expect(wrapper).toMatchSnapshot();
     });
 });

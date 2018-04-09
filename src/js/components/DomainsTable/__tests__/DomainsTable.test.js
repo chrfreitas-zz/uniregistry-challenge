@@ -18,6 +18,7 @@ describe('DomainsTable component', () => {
     it('It should render a html list', () => {
         const domains = [
             {
+                id: 1,
                 name: 'foofighter.lol',
                 uniregistry: 'Yes',
                 price: '$12.00'
