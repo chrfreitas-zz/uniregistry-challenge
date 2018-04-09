@@ -58,47 +58,5 @@ exports[`Home Module should match with the snapshot 1`] = `
       </tr>
     </tbody>
   </table>
-  <div
-    className="modal hide"
-  >
-    <form
-      action=""
-    >
-      <div>
-        <label>
-          Domain name
-        </label>
-        <input
-          type="text"
-        />
-      </div>
-      <div>
-        <label>
-          Registran email
-        </label>
-        <input
-          type="text"
-        />
-      </div>
-      <div>
-        <label>
-          Price
-        </label>
-        <input
-          type="text"
-        />
-      </div>
-      <div>
-        <button>
-          Update it!
-        </button>
-        <a
-          href=""
-        >
-          Cancel
-        </a>
-      </div>
-    </form>
-  </div>
 </div>
 `;
