@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 class DomainForm extends Component {
     static propTypes = {
         domain: PropTypes.object,
-        update: PropTypes.func
+        update: PropTypes.func,
+        setEditMode: PropTypes.func
     }
 
     state = {
@@ -22,9 +23,14 @@ class DomainForm extends Component {
         this.setState(newState);
     }
 
-    update = (e) => {
+    handleUpdateButton = (e) => {
         e.preventDefault();
         this.props.update(this.state.domain);
+        this.props.setEditMode(false);
+    }
+
+    handleCancelButton = () => {
+        this.props.setEditMode(false);
     }
 
     render() {
@@ -44,8 +50,8 @@ class DomainForm extends Component {
                         <input type="text" name="price" value={this.state.domain.price} onChange={this.handleChange} />
                     </div>
                     <div>
-                        <button onClick={this.update}>Update it!</button>
-                        <a href="">Cancel</a>
+                        <button onClick={this.handleUpdateButton}>Update it!</button>
+                        <a onClick={this.handleCancelButton}>Cancel</a>
                     </div>
                 </form>
             </div>

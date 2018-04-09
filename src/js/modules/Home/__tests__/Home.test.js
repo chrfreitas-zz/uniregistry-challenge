@@ -25,7 +25,7 @@ describe('Home Module', () => {
 
         const wrapper = shallow(<Home />);
         wrapper.instance().goEdit(domain);
-        expect(wrapper.state().modal.opened).toBeTruthy();
+        expect(wrapper.state().editMode).toBeTruthy();
     })
 
     it('should update the domain object with the new object', () => {
@@ -43,4 +43,18 @@ describe('Home Module', () => {
 
         expect(newPrice).toBe(domain.price);
     })
+
+    it('should show edit mode when true', () => {
+        const wrapper = shallow(<Home />);
+        wrapper.instance().setEditMode(true);
+
+        expect(wrapper.state().editMode).toBeTruthy();
+    });
+
+    it('should hide edit mode when false', () => {
+        const wrapper = shallow(<Home />);
+        wrapper.instance().setEditMode(false);
+
+        expect(wrapper.state().editMode).toBeFalsy();
+    });
 });

@@ -25,8 +25,8 @@ class Home extends Component {
                 price: '$9.00'
             },
         ],
+        editMode: false,
         modal: {
-            opened: false,
             domain: {}
         }
     }
@@ -46,21 +46,28 @@ class Home extends Component {
     }
 
     goEdit = (domain) => {
+        this.setEditMode(true);
+
         this.setState(prevState => {
             return {
                 modal: {
-                    opened: !prevState.modal.opened,
                     domain: prevState.domains.find(item => item.id === domain.id)
                 }
             }
         });
     }
 
+    setEditMode = (option = false) => {
+        this.setState({ editMode: option });
+    }
+
     render() {
         return (
             <div>
                 <DomainsTable domains={this.state.domains} goEdit={this.goEdit}/>
-                { this.state.modal.opened && <DomainForm domain={this.state.modal.domain} update={this.update}/> }
+                { this.state.editMode && <DomainForm domain={this.state.modal.domain}
+                                                    update={this.update}
+                                                    setEditMode={this.setEditMode} /> }
             </div>
         )
     }

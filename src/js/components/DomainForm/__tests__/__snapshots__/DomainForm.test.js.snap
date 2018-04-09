@@ -43,7 +43,7 @@ exports[`DomainForm component should match with the snapshot 1`] = `
         Update it!
       </button>
       <a
-        href=""
+        onClick={[Function]}
       >
         Cancel
       </a>
