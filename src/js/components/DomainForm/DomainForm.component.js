@@ -35,26 +35,24 @@ class DomainForm extends Component {
 
     render() {
         return (
-            <div>
-                <form>
-                    <div>
-                        <label>Domain name</label>
-                        <input type="text" name="name" value={this.state.domain.name} onChange={this.handleChange} />
-                    </div>
-                    <div>
-                        <label>Registran email</label>
-                        <input type="text" name="email" value={this.state.domain.email} onChange={this.handleChange} />
-                    </div>
-                    <div>
-                        <label>Price</label>
-                        <input type="text" name="price" value={this.state.domain.price} onChange={this.handleChange} />
-                    </div>
-                    <div>
-                        <button onClick={this.handleUpdateButton}>Update it!</button>
-                        <a onClick={this.handleCancelButton}>Cancel</a>
-                    </div>
-                </form>
-            </div>
+            <form>
+                <div className="form-group">
+                    <label>Domain name</label>
+                    <input type="text" className="form-control" name="name" value={this.state.domain.name} onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>Registran email</label>
+                    <input type="text" className="form-control" name="email" value={this.state.domain.email} onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                    <label>Price</label>
+                    <input type="text" className="form-control" name="price" value={this.state.domain.price} onChange={this.handleChange} />
+                </div>
+                <div className="form-group">
+                    <button className="btn btn-primary" onClick={this.handleUpdateButton}>Update it!</button>
+                    <a className="btn btn-link" onClick={this.handleCancelButton}>Cancel</a>
+                </div>
+            </form>
         );
     }
 }

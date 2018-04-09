@@ -62,9 +62,12 @@ class Home extends Component {
         return (
             <div>
                 <DomainsTable domains={this.state.domains} goEdit={this.goEdit}/>
-                { this.state.editMode && <DomainForm domain={this.state.selectedDomain}
-                                                    update={this.update}
-                                                    setEditMode={this.setEditMode} /> }
+
+                <div className="row justify-content-center">
+                    <div className="col-6">
+                        { this.state.editMode && <DomainForm domain={this.state.selectedDomain} update={this.update} setEditMode={this.setEditMode} /> }
+                    </div>
+                </div>
             </div>
         )
     }
