@@ -25,7 +25,7 @@ class DomainsTable extends Component {
         return domains.map((domain) => {
             return (
                 <tr key={domain.id}>
-                    <td onClick={ this.handleClickRow.bind(this, domain) }>{ domain.name }</td>
+                    <td onClick={ this.handleClickRow.bind(this, domain) }>{ domain.description }</td>
                     <td>{ domain.uniregistry }</td>
                     <td>{ domain.price }</td>
                 </tr>

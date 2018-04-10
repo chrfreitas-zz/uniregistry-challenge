@@ -1,6 +1,6 @@
 {
     "id": 3,
-    "domain": "selfdriving.cars",
+    "description": "selfdriving.cars",
     "price": 1600,
     "registrant_email": "carl.sagan@aimotors.com"
 }

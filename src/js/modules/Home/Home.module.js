@@ -5,28 +5,17 @@ import DomainForm from '../../components/DomainForm/DomainForm.component';
 
 class Home extends Component {
     state = {
-        domains: [
-            {
-                id: 1,
-                name: 'foolfighter.lol',
-                uniregistry: 'yes',
-                price: '$12.00'
-            },
-            {
-                id: 2,
-                name: 'selfdriving.cars',
-                uniregistry: 'yes',
-                price: '$16.00'
-            },
-            {
-                id: 3,
-                name: 'greendiamondsky.com',
-                uniregistry: 'no',
-                price: '$9.00'
-            },
-        ],
+        domains: [],
         editMode: false,
         selectedDomain: {}
+    }
+
+    componentWillMount() {
+        fetch('src/data/domains.json')
+            .then(response => response.json())
+            .then(data => {
+                this.setState({ domains: data.domains })
+            });
     }
 
     update = (domain) => {
@@ -58,7 +47,7 @@ class Home extends Component {
         this.setState({ editMode: option });
     }
 
-    getClassCol() {
+    getClassState() {
         if(this.state.editMode){
             return 'col is-editing';
         }
@@ -70,7 +59,7 @@ class Home extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className={this.getClassCol()}>
+                    <div className={this.getClassState()}>
                         <div className="row domain-table">
                             <div className="col-12">
                                 <DomainsTable domains={this.state.domains} goEdit={this.goEdit}/>
