@@ -63,7 +63,11 @@ class Home extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <DomainsTable domains={this.state.domains} goEdit={this.goEdit}/>
+                        <div className="row">
+                            <div className="col-12">
+                                <DomainsTable domains={this.state.domains} goEdit={this.goEdit}/>
+                            </div>
+                        </div>
 
                         <div className="row justify-content-center">
                             <div className="col-6">

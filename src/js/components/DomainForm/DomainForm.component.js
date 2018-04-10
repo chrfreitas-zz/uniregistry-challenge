@@ -35,7 +35,7 @@ class DomainForm extends Component {
 
     render() {
         return (
-            <form>
+            <form className="fadeUp">
                 <div className="form-group">
                     <label>Domain name</label>
                     <input type="text" className="form-control" name="name" value={this.state.domain.name} onChange={this.handleChange} />
