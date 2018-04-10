@@ -1,16 +1,18 @@
 
 .domain-form {
     transition: opacity .5s, transform .5s;
-    background-color: var(--blue);
-    padding: 35px 15px;
+    padding: 15px;
     border-radius: 5px;
-    color: var(--white);
     opacity: 0;
     top: 50%;
-    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    transform: scale(.8);
 }
 
-.is-editing .domain-form {
-    opacity: 1;
-    transform: translateY(0px);
+.is-editing {
+    .domain-form {
+        opacity: 1;
+        transform: scale(1);
+    }
 }

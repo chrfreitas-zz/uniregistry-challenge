@@ -1,0 +1,9 @@
+
+.table {
+    margin: 0;
+
+    td,
+    th {
+        border-top: 0;
+    }
+}

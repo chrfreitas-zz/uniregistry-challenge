@@ -60,15 +60,14 @@ class Home extends Component {
             <div className="container">
                 <div className="row">
                     <div className={this.getClassState()}>
-                        <div className="row domain-table">
-                            <div className="col-12">
-                                { !this.state.editMode && <DomainTable domains={this.state.domains} goEdit={this.goEdit}/> }
-                            </div>
-                        </div>
-
-                        <div className="row justify-content-center domain-form">
+                        <div className="row justify-content-center">
                             <div className="col-6">
-                                { this.state.editMode && <DomainForm domainId={this.state.selectedDomainId} update={this.update} setEditMode={this.setEditMode} /> }
+                                <div className="domain-table">
+                                    { !this.state.editMode && <DomainTable domains={this.state.domains} goEdit={this.goEdit}/> }
+                                </div>
+                                <div className="domain-form">
+                                    { this.state.editMode && <DomainForm domainId={this.state.selectedDomainId} update={this.update} setEditMode={this.setEditMode} /> }
+                                </div>
                             </div>
                         </div>
                     </div>
