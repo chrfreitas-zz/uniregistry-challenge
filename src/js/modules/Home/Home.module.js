@@ -10,7 +10,7 @@ class Home extends Component {
         selectedDomainId: {}
     }
 
-    componentWillMount() {
+    componentDidMount() {
         fetch('src/data/domains.json')
             .then(response => response.json())
             .then(data => {

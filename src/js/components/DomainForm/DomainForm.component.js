@@ -10,14 +10,18 @@ class DomainForm extends Component {
     }
 
     state = {
-        domain: {}
+        domain: {
+            id: 0,
+            description: '',
+            email: '',
+            price: 0
+        }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         fetch(`src/data/${this.props.domainId}.json`)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 this.setState({ domain: data })
             });
     }
@@ -45,10 +49,10 @@ class DomainForm extends Component {
 
     render() {
         return (
-            <form className="fadeUp">
+            <form>
                 <div className="form-group">
                     <label>Domain name</label>
-                    <input type="text" className="form-control" name="name" value={this.state.domain.description} onChange={this.handleChange} />
+                    <input type="text" className="form-control" name="description" value={this.state.domain.description} onChange={this.handleChange} />
                 </div>
                 <div className="form-group">
                     <label>Registran email</label>
