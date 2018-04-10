@@ -5,19 +5,29 @@ body {
     height: 100%;
 }
 
-.fadeUp {
-    animation: fadeUp .3s;
-    animation-fill-mode: forwards;
+.is-editing {
+    .domain-form {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    .domain-table {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
 }
 
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
+.domain-form,
+.domain-table {
+    transition: opacity .5s, transform .5s;
+}
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.domain-form {
+    opacity: 0;
+    transform: translateY(200px);
+}
+
+.domain-table {
+    opacity: 1;
+    transform: translateY(0px);
 }
