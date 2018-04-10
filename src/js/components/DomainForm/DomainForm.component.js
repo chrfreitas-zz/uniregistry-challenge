@@ -4,12 +4,22 @@ import PropTypes from 'prop-types';
 class DomainForm extends Component {
     static propTypes = {
         domain: PropTypes.object,
+        domainId: PropTypes.number,
         update: PropTypes.func,
         setEditMode: PropTypes.func
     }
 
     state = {
-        domain: this.props.domain
+        domain: {}
+    }
+
+    componentWillMount() {
+        fetch(`src/data/${this.props.domainId}.json`)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                this.setState({ domain: data })
+            });
     }
 
     handleChange = (event) => {

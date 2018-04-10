@@ -2,5 +2,5 @@
     "id": 2,
     "description": "foodfighters.lol",
     "price": 1200,
-    "registrant_email": "john.smith@email.com"
+    "email": "john.smith@email.com"
 }

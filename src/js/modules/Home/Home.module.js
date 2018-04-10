@@ -7,7 +7,7 @@ class Home extends Component {
     state = {
         domains: [],
         editMode: false,
-        selectedDomain: {}
+        selectedDomainId: {}
     }
 
     componentWillMount() {
@@ -34,12 +34,12 @@ class Home extends Component {
 
     goEdit = (domain) => {
         this.setEditMode(true);
-        this.setSelectedDomain(domain);
+        this.setSelectedDomain(domain.id);
     }
 
-    setSelectedDomain(domain) {
+    setSelectedDomain(id) {
         this.setState({
-            selectedDomain: this.state.domains.find(item => item.id === domain.id)
+            selectedDomainId: id
         });
     }
 
@@ -68,7 +68,7 @@ class Home extends Component {
 
                         <div className="row justify-content-center domain-form">
                             <div className="col-6">
-                                { this.state.editMode && <DomainForm domain={this.state.selectedDomain} update={this.update} setEditMode={this.setEditMode} /> }
+                                { this.state.editMode && <DomainForm domainId={this.state.selectedDomainId} update={this.update} setEditMode={this.setEditMode} /> }
                             </div>
                         </div>
                     </div>

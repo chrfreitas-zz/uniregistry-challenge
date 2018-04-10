@@ -2,5 +2,5 @@
     "id": 3,
     "description": "selfdriving.cars",
     "price": 1600,
-    "registrant_email": "carl.sagan@aimotors.com"
+    "email": "carl.sagan@aimotors.com"
 }
