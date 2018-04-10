@@ -1,0 +1,16 @@
+
+.is-editing .domain-table {
+    opacity: 0;
+    top: -50%;
+    transform: translateY(50%);
+}
+
+.domain-table {
+    transition: opacity .5s, transform .5s;
+    background-color: var(--blue);
+    padding: 35px 15px;
+    border-radius: 5px;
+    color: var(--white);
+    opacity: 1;
+    transform: translateY(0px);
+}

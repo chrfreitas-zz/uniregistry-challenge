@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import DomainsTable from '../../components/DomainsTable/DomainsTable.component';
+import DomainTable from '../../components/DomainTable/DomainTable.component';
 import DomainForm from '../../components/DomainForm/DomainForm.component';
 
 class Home extends Component {
@@ -62,7 +62,7 @@ class Home extends Component {
                     <div className={this.getClassState()}>
                         <div className="row domain-table">
                             <div className="col-12">
-                                <DomainsTable domains={this.state.domains} goEdit={this.goEdit}/>
+                                { !this.state.editMode && <DomainTable domains={this.state.domains} goEdit={this.goEdit}/> }
                             </div>
                         </div>
 

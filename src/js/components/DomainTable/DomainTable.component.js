@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class DomainsTable extends Component {
+class DomainTable extends Component {
     static propTypes = {
         domains: PropTypes.array,
         goEdit: PropTypes.func
@@ -24,8 +24,8 @@ class DomainsTable extends Component {
     renderBody(domains = []) {
         return domains.map((domain) => {
             return (
-                <tr key={domain.id}>
-                    <td onClick={ this.handleClickRow.bind(this, domain) }>{ domain.description }</td>
+                <tr key={domain.id} onClick={ this.handleClickRow.bind(this, domain) }>
+                    <td>{ domain.description }</td>
                     <td>{ domain.uniregistry }</td>
                     <td>{ domain.price }</td>
                 </tr>
@@ -47,4 +47,4 @@ class DomainsTable extends Component {
     }
 }
 
-export default DomainsTable;
+export default DomainTable;

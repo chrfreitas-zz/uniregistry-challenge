@@ -3,15 +3,15 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 
-import DomainsTable from '../DomainsTable.component';
+import DomainTable from '../DomainTable.component';
 
 beforeAll(() => {
     Enzyme.configure({ adapter: new Adapter() });
 });
 
-describe('DomainsTable component', () => {
+describe('DomainTable component', () => {
     it('It should match with the snapshot', () => {
-        const wrapper = renderer.create(<DomainsTable />).toJSON();
+        const wrapper = renderer.create(<DomainTable />).toJSON();
         expect(wrapper).toMatchSnapshot();
     });
 
@@ -25,7 +25,7 @@ describe('DomainsTable component', () => {
             }
         ];
 
-        const wrapper = shallow(<DomainsTable domains={domains} />);
+        const wrapper = shallow(<DomainTable domains={domains} />);
 
         const amountDomains = domains.length;
         const amountDomainsRendered = wrapper.find('tbody tr').length;

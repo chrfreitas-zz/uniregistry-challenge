@@ -1,33 +1,17 @@
-@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min";
+
+@import "./components/DomainForm";
+@import "./components/DomainTable";
+@import "./helpers/variables";
 
 html,
 body {
     height: 100%;
 }
 
-.is-editing {
-    .domain-form {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-
-    .domain-table {
-        opacity: 0;
-        transform: translateY(-200px);
-    }
-}
-
-.domain-form,
-.domain-table {
-    transition: opacity .5s, transform .5s;
-}
-
-.domain-form {
-    opacity: 0;
-    transform: translateY(200px);
-}
-
-.domain-table {
-    opacity: 1;
-    transform: translateY(0px);
+main {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
 }

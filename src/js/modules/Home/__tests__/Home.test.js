@@ -15,7 +15,7 @@ describe('Home Module', () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('should change modal.opened to true', () => {
+    it('should change set editMode true', () => {
         const domain = {
             id: 2,
             name: 'lalala',
