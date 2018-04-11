@@ -1,52 +1,58 @@
+import API from '../services/API.service';
+
 const STORE_KEY = 'domains';
 
 class Domain {
-    static getAll(){
-        const domains = JSON.parse(localStorage.getItem(STORE_KEY)) || [];
 
-        if(domains.length){
+    static load(){
+        return new Promise(resolve => API.getDomains().then(data => {
+            this.addAll(data.domains);
+            resolve(data.domains);
+        }));
+    }
+
+    static getAll() {
+        const domains = JSON.parse(localStorage.getItem(STORE_KEY));
+
+        if(domains){
             return domains;
         }
 
-        return this.addAll();
+        return [];
     }
 
     static addAll(values = []){
         localStorage.setItem(STORE_KEY, JSON.stringify(values));
-        return values;
+        return true;
     }
 
     static get(id) {
-        const allDomains = this.getAll();
-        const domain = allDomains.find(item => item.id === id);
+        return new Promise(resolve => {
+            const domain = this.getAll().find(item => item.id === id);
 
-        if(domain && domain.id === id){
-            return domain;
-        }
+            if(domain && domain.id === id && domain.email){
+                return resolve(domain);
+            }
 
-        return;
+            return API.getDomain(id).then(data => {
+                this.update(data);
+                resolve(data);
+            });
+        });
     }
 
     static add(value){
-        const allDomains = this.getAll();
-        const newDomains = [ ... allDomains, value];
-
-        localStorage.setItem('domains', JSON.stringify(newDomains));
-
-        return newDomains;
+        const newDomains = [ ... this.getAll(), value];
+        localStorage.setItem(STORE_KEY, JSON.stringify(newDomains));
+        return true;
     }
 
     static update(value) {
-        const domain = this.get(value.id);
-        if(!domain){
-            return false;
+        if(value.id && this.remove(value.id)){
+            return this.add(value);
         }
 
-        this.remove(domain.id);
-        const newDomain = Object.assign({}, domain, value);
-        this.add(newDomain);
-
-        return true;
+        return false;
     }
 
     static remove(id){
@@ -54,13 +60,15 @@ class Domain {
 
         if(newDomains){
             this.addAll(newDomains);
-            return true;
+            return true
         }
 
         return false;
     }
 
-
+    static clear() {
+        localStorage.removeItem(STORE_KEY);
+    }
 }
 
 export default Domain;

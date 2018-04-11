@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import DomainTable from '../../components/DomainTable/DomainTable.component';
 import DomainForm from '../../components/DomainForm/DomainForm.component';
-import API from '../../services/API.service';
 import Domain from '../../classes/Domain.class';
 
 class Home extends Component {
@@ -13,10 +12,10 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        Domain.addAll([]);
+        Domain.clear();
 
-        API.getDomains().then(data => {
-            this.setState({ domains: data.domains })
+        Domain.load().then(domains => {
+            this.setState({ domains })
         });
     }
 
