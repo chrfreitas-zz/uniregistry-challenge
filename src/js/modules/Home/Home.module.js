@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import DomainTable from '../../components/DomainTable/DomainTable.component';
 import DomainForm from '../../components/DomainForm/DomainForm.component';
+import API from '../../services/API.service';
+import Domain from '../../classes/Domain.class';
 
 class Home extends Component {
     state = {
@@ -11,11 +13,11 @@ class Home extends Component {
     }
 
     componentDidMount() {
-        fetch('src/data/domains.json')
-            .then(response => response.json())
-            .then(data => {
-                this.setState({ domains: data.domains })
-            });
+        Domain.addAll([]);
+
+        API.getDomains().then(data => {
+            this.setState({ domains: data.domains })
+        });
     }
 
     update = (domain) => {

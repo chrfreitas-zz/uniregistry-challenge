@@ -13,7 +13,9 @@
     'globals': {
         'document': true,
         'console': true,
-        'fetch': true
+        'fetch': true,
+        'Promise': true,
+        'localStorage': true
     },
     'plugins': [ 'react' ],
     'extends': [ 'plugin:react/recommended' ]

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import API from '../../services/API.service';
+
 class DomainForm extends Component {
     static propTypes = {
         domain: PropTypes.object,
@@ -19,8 +21,7 @@ class DomainForm extends Component {
     }
 
     componentDidMount() {
-        fetch(`src/data/${this.props.domainId}.json`)
-            .then(response => response.json())
+        API.getDomain(this.props.domainId)
             .then(data => {
                 this.setState({ domain: data })
             });
