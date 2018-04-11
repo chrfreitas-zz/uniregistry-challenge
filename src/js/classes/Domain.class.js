@@ -36,14 +36,14 @@ class Domain {
         return newDomains;
     }
 
-    static update(id, value) {
-        const domain = this.get(id);
+    static update(value) {
+        const domain = this.get(value.id);
         if(!domain){
             return false;
         }
 
-        this.remove(id);
-        const newDomain = { ...domain, value };
+        this.remove(value.id);
+        const newDomain = Object.assign({}, domain, value);
         this.add(newDomain);
 
         return true;

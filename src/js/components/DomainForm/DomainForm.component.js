@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import API from '../../services/API.service';
+import Domain from '../../classes/Domain.class';
 
 class DomainForm extends Component {
     static propTypes = {
@@ -40,6 +41,8 @@ class DomainForm extends Component {
 
     handleUpdateButton = (e) => {
         e.preventDefault();
+
+        Domain.update(this.state.domain);
         this.props.update(this.state.domain);
         this.props.setEditMode(false);
     }
