@@ -12,12 +12,7 @@ class DomainForm extends Component {
     }
 
     state = {
-        domain: {
-            id: 0,
-            description: '',
-            email: '',
-            price: 0
-        }
+        domain: new Domain()
     }
 
     componentDidMount() {

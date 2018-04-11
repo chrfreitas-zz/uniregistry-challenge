@@ -1,11 +1,12 @@
+import axios from 'axios';
 
 class API {
     static getDomains() {
-        return fetch('src/data/domains.json').then(response => response.json());
+        return axios.get('src/data/domains.json');
     }
 
     static getDomain(id) {
-        return fetch(`src/data/${id}.json`).then(response => response.json());
+        return axios.get(`src/data/${id}.json`);
     }
 }
 

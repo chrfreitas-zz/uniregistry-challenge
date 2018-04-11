@@ -62,7 +62,7 @@ class Home extends Component {
                 <div className="row">
                     <div className={this.getClassState()}>
                         <div className="row justify-content-center">
-                            <div className="col-6">
+                            <div className="col col-md-10 col-lg-6">
                                 <div className="domain-table">
                                     { !this.state.editMode && <DomainTable domains={this.state.domains} goEdit={this.goEdit}/> }
                                 </div>

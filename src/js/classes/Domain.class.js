@@ -3,11 +3,17 @@ import API from '../services/API.service';
 const STORE_KEY = 'domains';
 
 class Domain {
+    constructor() {
+        this.id = '';
+        this.description = '';
+        this.email = '';
+        this.price = '';
+    }
 
     static load(){
-        return new Promise(resolve => API.getDomains().then(data => {
-            this.addAll(data.domains);
-            resolve(data.domains);
+        return new Promise(resolve => API.getDomains().then(response => {
+            this.addAll(response.data.domains);
+            resolve(response.data.domains);
         }));
     }
 
@@ -34,15 +40,15 @@ class Domain {
                 return resolve(domain);
             }
 
-            return API.getDomain(id).then(data => {
-                this.update(data);
-                resolve(data);
+            return API.getDomain(id).then(response => {
+                this.update(response.data);
+                resolve(response.data);
             });
         });
     }
 
     static add(value){
-        const newDomains = [ ... this.getAll(), value];
+        const newDomains = [ ...this.getAll(), value];
         localStorage.setItem(STORE_KEY, JSON.stringify(newDomains));
         return true;
     }
@@ -60,7 +66,7 @@ class Domain {
 
         if(newDomains){
             this.addAll(newDomains);
-            return true
+            return true;
         }
 
         return false;
@@ -68,6 +74,7 @@ class Domain {
 
     static clear() {
         localStorage.removeItem(STORE_KEY);
+        return true;
     }
 }
 
