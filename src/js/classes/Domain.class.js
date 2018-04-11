@@ -42,7 +42,7 @@ class Domain {
             return false;
         }
 
-        this.remove(value.id);
+        this.remove(domain.id);
         const newDomain = Object.assign({}, domain, value);
         this.add(newDomain);
 
