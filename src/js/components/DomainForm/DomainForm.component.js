@@ -33,7 +33,7 @@ class DomainForm extends Component {
         this.setState(newState);
     }
 
-    handleUpdateButton = (e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
 
         const domains = new Domain(this.state.domain);
@@ -49,21 +49,21 @@ class DomainForm extends Component {
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <label>Domain name</label>
-                    <input type="text" className="form-control" name="description" value={this.state.domain.description} onChange={this.handleChange} />
+                    <input type="text" className="form-control" name="description" value={this.state.domain.description} onChange={this.handleChange} required />
                 </div>
                 <div className="form-group">
                     <label>Registran email</label>
-                    <input type="text" className="form-control" name="email" value={this.state.domain.email} onChange={this.handleChange} />
+                    <input type="text" className="form-control" name="email" value={this.state.domain.email} onChange={this.handleChange} required />
                 </div>
                 <div className="form-group">
                     <label>Price</label>
-                    <input type="text" className="form-control" name="price" value={this.state.domain.price} onChange={this.handleChange} />
+                    <input type="text" className="form-control" name="price" value={this.state.domain.price} onChange={this.handleChange} required />
                 </div>
                 <div className="form-group">
-                    <button className="btn btn-primary" onClick={this.handleUpdateButton}>Update it!</button>
+                    <button className="btn btn-primary">Update it!</button>
                     <a className="btn btn-link" onClick={this.handleCancelButton}>Cancel</a>
                 </div>
             </form>
