@@ -27,7 +27,7 @@ exports[`DomainForm component should match with the snapshot 1`] = `
       name="email"
       onChange={[Function]}
       type="text"
-      value=""
+      value={undefined}
     />
   </div>
   <div

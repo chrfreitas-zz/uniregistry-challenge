@@ -27,7 +27,9 @@ exports[`Home Module should match with the snapshot 1`] = `
                   <th>
                     Domains name
                   </th>
-                  <th>
+                  <th
+                    className="text-center"
+                  >
                     Uniregistry
                   </th>
                   <th>
