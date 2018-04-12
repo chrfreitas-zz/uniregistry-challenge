@@ -1,17 +1,17 @@
-
+@import "./../helpers/animation.css";
 
 .domain-table {
-    transition: opacity .5s;
     background-color: var(--gray-light);
     padding: 15px;
     border-radius: 5px;
-    opacity: 1;
     background: rgba(0, 0, 0, 0.2);
     color: #fff;
+    animation: fadeIn .5s;
+    animation-fill-mode: forwards;
 }
 
 .is-editing {
     .domain-table {
-        opacity: 0;
+        display: none;
     }
 }
