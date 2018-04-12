@@ -48,12 +48,16 @@ class Domain {
     }
 
     static add(value){
+        if(!value) {
+            return false;
+        }
+
         const newDomains = [ ...this.getAll(), value];
         localStorage.setItem(STORE_KEY, JSON.stringify(newDomains));
         return true;
     }
 
-    static update(value) {
+    static update(value = {}) {
         if(value.id && this.remove(value.id)){
             return this.add(value);
         }
@@ -62,6 +66,10 @@ class Domain {
     }
 
     static remove(id){
+        if(!id) {
+            return false;
+        }
+
         const newDomains = this.getAll().filter(item => item.id !== id);
 
         if(newDomains){
