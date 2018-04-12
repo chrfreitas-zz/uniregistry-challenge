@@ -3,6 +3,7 @@
 @import "./components/DomainForm";
 @import "./components/DomainTable";
 @import "./components/Table";
+@import "./components/Icons";
 @import "./helpers/variables";
 
 html,

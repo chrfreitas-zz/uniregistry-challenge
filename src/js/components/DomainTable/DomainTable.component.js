@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import CheckIcon from '../UI/Icons/Check.icon';
+
 class DomainTable extends Component {
     static propTypes = {
         domains: PropTypes.array,
@@ -15,7 +17,7 @@ class DomainTable extends Component {
         return (
             <tr>
                 <th>Domains name</th>
-                <th>Uniregistry</th>
+                <th className="text-center">Uniregistry</th>
                 <th>Price</th>
             </tr>
         )
@@ -26,7 +28,7 @@ class DomainTable extends Component {
             return (
                 <tr key={domain.id} onClick={ this.handleClickRow.bind(this, domain) }>
                     <td>{ domain.description }</td>
-                    <td>{ domain.uniregistry }</td>
+                    <td className="text-center">{ domain.uniregistry && <CheckIcon /> }</td>
                     <td>{ domain.price }</td>
                 </tr>
             );

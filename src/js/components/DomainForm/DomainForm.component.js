@@ -36,8 +36,10 @@ class DomainForm extends Component {
     handleUpdateButton = (e) => {
         e.preventDefault();
 
-        Domain.update(this.state.domain);
-        this.props.update(this.state.domain);
+        const domains = new Domain(this.state.domain);
+
+        Domain.update(domains);
+        this.props.update(domains);
         this.props.setEditMode(false);
     }
 

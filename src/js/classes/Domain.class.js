@@ -3,17 +3,23 @@ import API from '../services/API.service';
 const STORE_KEY = 'domains';
 
 class Domain {
-    constructor() {
-        this.id = '';
-        this.description = '';
-        this.email = '';
-        this.price = '';
+    constructor(values = {}) {
+        this.id = values.id || '';
+        this.description = values.description || '';
+        this.email = values.email;
+        this.price = values.price || '';
+    }
+
+    get uniregistry() {
+        return this.description.match(/(cars|lol)$/);
     }
 
     static load(){
         return new Promise(resolve => API.getDomains().then(response => {
-            this.addAll(response.data.domains);
-            resolve(response.data.domains);
+            const domains = response.data.domains.map(item => new Domain(item));
+
+            this.addAll(domains);
+            resolve(domains);
         }));
     }
 
