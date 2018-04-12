@@ -8,7 +8,7 @@ class Home extends Component {
     state = {
         domains: [],
         editMode: false,
-        selectedDomainId: {}
+        selectedDomainId: 0
     }
 
     componentDidMount() {
@@ -19,18 +19,16 @@ class Home extends Component {
         });
     }
 
-    update = (domain) => {
-        const newState = {
-            domains: this.state.domains.map(elem => {
-                if(elem.id === domain.id){
-                    elem = domain;
-                }
+    update = (domain = []) => {
+        const newDomains = this.state.domains.map(item => {
+            if(item.id === domain.id){
+                item = domain;
+            }
 
-                return elem;
-            })
-        }
+            return item;
+        });
 
-        this.setState(newState);
+        this.setState({ domains: newDomains });
     }
 
     goEdit = (domain) => {
