@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DomainTable component It should match with the snapshot 1`] = `
+exports[`DomainTable component should match with the snapshot 1`] = `
 <table
   className="table table-hover"
 >

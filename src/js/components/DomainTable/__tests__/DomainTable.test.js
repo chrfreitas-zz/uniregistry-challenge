@@ -10,26 +10,32 @@ beforeAll(() => {
 });
 
 describe('DomainTable component', () => {
-    it('It should match with the snapshot', () => {
+    it('should match with the snapshot', () => {
         const wrapper = renderer.create(<DomainTable />).toJSON();
         expect(wrapper).toMatchSnapshot();
     });
 
-    it('It should render a html list', () => {
-        const domains = [
-            {
-                id: 1,
-                name: 'foofighter.lol',
-                uniregistry: 'Yes',
-                price: '$12.00'
-            }
-        ];
+    describe('renderBody()', () => {
+        it('should render a html list', () => {
+            const domains = [{
+                    id: 1,
+                    name: 'foofighter.lol',
+                    uniregistry: 'Yes',
+                    price: '$12.00'
+            }];
 
-        const wrapper = shallow(<DomainTable domains={domains} />);
+            const wrapper = shallow(<DomainTable domains={domains} />);
+            const amountDomains = domains.length;
+            const amountDomainsRendered = wrapper.find('tbody tr').length;
 
-        const amountDomains = domains.length;
-        const amountDomainsRendered = wrapper.find('tbody tr').length;
+            expect(amountDomains).toEqual(amountDomainsRendered);
+        });
 
-        expect(amountDomains).toEqual(amountDomainsRendered);
+        it('should not render a html list', () => {
+            const wrapper = shallow(<DomainTable />);
+            const amountDomainsRendered = wrapper.find('tbody tr').length;
+
+            expect(amountDomainsRendered).toEqual(0);
+        });
     });
 });
