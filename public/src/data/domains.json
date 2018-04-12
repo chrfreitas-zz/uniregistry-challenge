@@ -1,0 +1,15 @@
+{
+    "domains": [{
+        "id": 1,
+        "description": "foodfighters.lol",
+        "price": 1200
+    }, {
+        "id": 2,
+        "description": "greendiamondsky.com",
+        "price": 900
+    }, {
+        "id": 3,
+        "description": "selfdriving.cars",
+        "price": 1600
+    }]
+}
